@@ -1,0 +1,160 @@
+/* ════════════════════════════════════════════════════════════════
+   Estilos da Agenda de Contatos
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Geral ───────────────────────────────────────────────────────── */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+}
+
+/* ── Cabeçalho ───────────────────────────────────────────────────── */
+.header {
+    -fx-background-color: white;
+}
+
+.titulo {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* ── Campo de busca ──────────────────────────────────────────────── */
+.campo-busca {
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 1px;
+    -fx-padding: 7px 14px;
+    -fx-background-color: #f8fafc;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.campo-busca:focused {
+    -fx-border-color: #4361ee;
+    -fx-background-color: white;
+}
+
+/* ── Botões ──────────────────────────────────────────────────────── */
+
+/* Botão principal (azul) — Novo Contato */
+.btn-primario {
+    -fx-background-color: #4361ee;
+    -fx-text-fill: white;
+    -fx-background-radius: 7px;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 18px;
+    -fx-cursor: hand;
+}
+.btn-primario:hover   { -fx-background-color: #3451d1; }
+.btn-primario:pressed { -fx-background-color: #2640b8; }
+
+/* Botão secundário (cinza) — Editar */
+.btn-secundario {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #475569;
+    -fx-background-radius: 7px;
+    -fx-font-size: 13px;
+    -fx-padding: 7px 16px;
+    -fx-cursor: hand;
+}
+.btn-secundario:hover   { -fx-background-color: #e2e8f0; }
+.btn-secundario:pressed { -fx-background-color: #cbd5e1; }
+
+/* Botão de perigo (vermelho suave) — Excluir */
+.btn-perigo {
+    -fx-background-color: #fff1f2;
+    -fx-text-fill: #dc2626;
+    -fx-background-radius: 7px;
+    -fx-font-size: 13px;
+    -fx-padding: 7px 16px;
+    -fx-cursor: hand;
+}
+.btn-perigo:hover   { -fx-background-color: #fee2e2; }
+.btn-perigo:pressed { -fx-background-color: #fecaca; }
+
+/* Botão desabilitado (estado: disable="true") */
+.button:disabled {
+    -fx-opacity: 0.45;
+}
+
+/* ── Tabela de contatos ──────────────────────────────────────────── */
+.table-view {
+    -fx-border-color: transparent;
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+}
+
+/* Cabeçalho da tabela (linha com nomes das colunas) */
+.table-view .column-header-background {
+    -fx-background-color: #f8fafc;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e2e8f0 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+    -fx-padding: 10px 8px;
+}
+
+/* Linhas da tabela */
+.table-view .table-row-cell {
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 4px 0;
+}
+
+/* Linha selecionada */
+.table-view .table-row-cell:selected {
+    -fx-background-color: #eff6ff;
+}
+.table-view .table-row-cell:selected .text {
+    -fx-fill: #1e40af;
+}
+
+/* Linha ao passar o mouse */
+.table-view .table-row-cell:hover:!selected {
+    -fx-background-color: #f8fafc;
+}
+
+/* Células */
+.table-view .table-cell {
+    -fx-padding: 10px 8px;
+    -fx-text-fill: #334155;
+}
+
+/* ── Rodapé ──────────────────────────────────────────────────────── */
+.barra-acoes {
+    -fx-background-color: #f8fafc;
+}
+
+.label-status {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+
+/* ── Scrollbar (barra de rolagem da tabela) ──────────────────────── */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 4px;
+}
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+.scroll-bar .track,
+.scroll-bar .track-background {
+    -fx-background-color: transparent;
+}
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}

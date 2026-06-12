@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+    Layout da tela principal usando BorderPane:
+    ┌──────────────────────────────────────┐
+    │  TOP: barra de título e busca        │
+    ├──────────────────────────────────────┤
+    │  CENTER: tabela de contatos          │
+    │                                      │
+    ├──────────────────────────────────────┤
+    │  BOTTOM: contador + botões de ação   │
+    └──────────────────────────────────────┘
+
+    fx:controller liga este arquivo ao MainController.java.
+    fx:id nos elementos corresponde aos campos @FXML no controller.
+-->
+<BorderPane
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.agenda.controller.MainController"
+    prefWidth="850"
+    prefHeight="580">
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!--  TOPO: título + campo de busca + botão "Novo Contato"         -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="16">
+                <padding>
+                    <Insets top="14" right="20" bottom="12" left="20"/>
+                </padding>
+
+                <Label text="📋 Agenda de Contatos" styleClass="titulo"/>
+
+                <!-- Espaço flexível empurra os controles para a direita -->
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <TextField
+                    fx:id="campoBusca"
+                    promptText="🔍  Buscar por nome..."
+                    prefWidth="240"
+                    styleClass="campo-busca"
+                    onKeyReleased="#buscarContato"/>
+
+                <Button
+                    text="＋  Novo Contato"
+                    onAction="#abrirFormularioNovo"
+                    styleClass="btn-primario"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!--  CENTRO: tabela com a lista de contatos                       -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <center>
+        <TableView fx:id="tabelaContatos">
+            <columns>
+                <TableColumn fx:id="colNome"      text="Nome"      prefWidth="220"/>
+                <TableColumn fx:id="colTelefone"  text="Telefone"  prefWidth="155"/>
+                <TableColumn fx:id="colEmail"     text="E-mail"    prefWidth="235"/>
+                <TableColumn fx:id="colEndereco"  text="Endereço"  prefWidth="200"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <!--  RODAPÉ: contador de contatos + botões editar/excluir         -->
+    <!-- ══════════════════════════════════════════════════════════════ -->
+    <bottom>
+        <VBox>
+            <Separator/>
+            <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="barra-acoes">
+                <padding>
+                    <Insets top="10" right="16" bottom="10" left="16"/>
+                </padding>
+
+                <!-- Contador à esquerda -->
+                <Label fx:id="labelStatus" text="0 contatos" styleClass="label-status"/>
+
+                <!-- Espaço flexível -->
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Botões só ficam ativos quando um contato está selecionado -->
+                <Button
+                    fx:id="btnEditar"
+                    text="✏  Editar"
+                    onAction="#editarContato"
+                    styleClass="btn-secundario"
+                    disable="true"/>
+
+                <Button
+                    fx:id="btnExcluir"
+                    text="🗑  Excluir"
+                    onAction="#excluirContato"
+                    styleClass="btn-perigo"
+                    disable="true"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
