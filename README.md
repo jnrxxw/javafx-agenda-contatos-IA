@@ -23,6 +23,12 @@ Aplicativo desktop para gerenciar contatos pessoais, desenvolvido em Java com in
 
 ---
 
+## 📸 Demonstração
+
+<img width="1083" height="715" alt="Interface" src="https://github.com/user-attachments/assets/05f253a8-2a0c-4500-b0c9-dbcb034515f1" />
+
+---
+
 ## 🖥️ Pré-requisitos
 
 Antes de instalar o projeto, você precisa ter os seguintes programas no seu computador:
@@ -34,6 +40,7 @@ Antes de instalar o projeto, você precisa ter os seguintes programas no seu com
 | **PostgreSQL** | 14 | Banco de dados | [postgresql.org](https://www.postgresql.org/download/) |
 | **IntelliJ IDEA** | Qualquer | IDE para abrir o projeto | [jetbrains.com](https://www.jetbrains.com/idea/download/) *(Community é gratuita)* |
 
+---
 
 ## ⚙️ Instalação
 
